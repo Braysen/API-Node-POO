@@ -7,7 +7,8 @@
     "tsc": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "tsc  && node build/server.js",
-    "start:dev": ""
+    "start:dev": "tsc && concurrently \"tsc -w\" \"nodemon build/server.js\"",
+    "start:prod": "SET NODE_ENV=production && npm start"
   },
   "author": "",
   "license": "ISC",
